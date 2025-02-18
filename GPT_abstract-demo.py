@@ -51,8 +51,7 @@ def extract_comments_from_excel(file_path: str, sheet_name: str):
     return user_input
 
 def gpt_api_text(prompt: str, user_input: str):
-    # 先直接在這裡設置 API 金鑰（不建議用於生產環境）
-    api_key = "api_key"  # 請將此處替換為您的實際 API 金鑰
+    api_key= os.getenv("gpt_api_key")
     client = OpenAI(api_key=api_key)
 
     try: 
